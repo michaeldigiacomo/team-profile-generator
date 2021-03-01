@@ -10,7 +10,17 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+const teamArray = []
+function renderTeam(){
+    const michael = new Engineer("Michael", "1234", "Email@email.com", "michaeldigiacomo" );
+    teamArray.push(michael)
+    if(!fs.existsSync(OUTPUT_DIR)){
+        fs.mkdirSync(OUTPUT_DIR)
+    }
+    fs.writeFileSync(outputPath, render(teamArray),"utf-8")
+}
 
+renderTeam();
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 

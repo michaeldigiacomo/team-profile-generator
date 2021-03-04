@@ -9,6 +9,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const Employee = require("./lib/Employee");
 
 const teamArray = []
 function renderTeam(){
@@ -18,9 +19,66 @@ function renderTeam(){
         fs.mkdirSync(OUTPUT_DIR)
     }
     fs.writeFileSync(outputPath, render(teamArray),"utf-8")
+
+    const frank = new Intern("Frank", "5678", "Email2@email.com", "frankdigiacomo" );
+    teamArray.push(frank)
+    if(!fs.existsSync(OUTPUT_DIR)){
+        fs.mkdirSync(OUTPUT_DIR)
+    }
+    fs.writeFileSync(outputPath, render(teamArray),"utf-8")
+
+    const clyde = new Manager("Clyde", "abcd", "Email3@email.com", "clydedigiacomo" );
+    teamArray.push(clyde)
+    if(!fs.existsSync(OUTPUT_DIR)){
+        fs.mkdirSync(OUTPUT_DIR)
+    }
+    fs.writeFileSync(outputPath, render(teamArray),"utf-8")
+
+    const kelly = new Intern("Kelly", "efgh", "Email4@email.com", "kellydigiacomo" );
+    teamArray.push(kelly)
+    if(!fs.existsSync(OUTPUT_DIR)){
+        fs.mkdirSync(OUTPUT_DIR)
+    }
+    fs.writeFileSync(outputPath, render(teamArray),"utf-8")
 }
 
 renderTeam();
+
+// const idArray = [];
+
+// function menu() {
+
+//     function createManager() {
+//         inquirer.prompt([
+//             {
+//                 type: "input",
+//                 name: "managerName",
+//                 message: "What is the managers name",
+//                 validate: answer => {
+//                     if (answer !== "") {
+//                         return true;
+//                     }
+//                     return "Please enter at least one character.";
+//                 }
+//             },
+//             {
+//                 type: "input",
+//                 name: "managerId",
+//                 message: "What is the managers ID?"
+//                 validate: answer => {
+//                     if (answer !== "") {
+//                         //validate that the ID's do not match
+//                         return true;
+//                     }
+//                     return "Please enter a valid ID.";
+//                 }
+//             },
+//         ])
+//     }
+// }
+
+
+
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 

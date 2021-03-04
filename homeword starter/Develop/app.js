@@ -54,25 +54,29 @@ renderTeam();
 //                 type: "input",
 //                 name: "managerName",
 //                 message: "What is the managers name",
-//                 validate: answer => {
-//                     if (answer !== "") {
-//                         return true;
-//                     }
-//                     return "Please enter at least one character.";
-//                 }
+//                 // validate: answer => {
+//                 //     if (answer !== "") {
+//                 //         return true;
+//                 //     }
+//                 //     return "Please enter at least one character.";
+//                 // }
 //             },
 //             {
 //                 type: "input",
 //                 name: "managerId",
 //                 message: "What is the managers ID?"
-//                 validate: answer => {
-//                     if (answer !== "") {
-//                         //validate that the ID's do not match
-//                         return true;
-//                     }
-//                     return "Please enter a valid ID.";
-//                 }
+//                 // validate: answer => {
+//                 //     if (answer !== "") {
+//                 //         //validate that the ID's do not match
+//                 //         return true;
+//                 //     }
+//                 //     return "Please enter a valid ID.";
+//                 // }
 //             },
+//             {
+//                 type: "input",
+//                 name: ""
+//             }
 //         ])
 //     }
 // }
